@@ -1,1 +1,3 @@
 GEt the user data...
+process the data 
+create an avathor
