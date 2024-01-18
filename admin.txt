@@ -1,61 +1,64 @@
-Creating a "Hello World" application using Django involves several steps. I'll guide you through the process
+ Certainly! Here's a simple set of Git commands for a basic demonstration. This assumes you have Git installed on your machine and have a GitHub account for remote repositories.
 
-1. **Install Django:**
-   If you haven't installed Django, you can do so using pip:
+1. **Initialize a new Git repository:**
    ```bash
-   pip install Django
+   git init
    ```
 
-2. **Create a Django Project:**
-   Start by creating a new Django project. Open a terminal and run:
+2. **Create a new file:**
    ```bash
-   django-admin startproject HelloWorldProject
+   echo "Hello, Git!" > hello.txt
    ```
 
-3. **Navigate to the Project Directory:**
-   Change into the project directory:
+3. **Stage the changes:**
    ```bash
-   cd HelloWorldProject
+   git add hello.txt
    ```
 
-4. **Create a Django App:**
-   Create a Django app within the project:
+4. **Commit the changes:**
    ```bash
-   python manage.py startapp HelloWorldApp
+   git commit -m "Initial commit"
    ```
 
-5. **Define a View:**
-   Open `HelloWorldApp/views.py` and define a simple view:
-   ```python
-   from django.http import HttpResponse
+5. **Create a new repository on GitHub:**
+   - Go to [GitHub](https://github.com/).
+   - Create a new repository (let's call it `git-demo`).
 
-   def hello_world(request):
-       return HttpResponse("Hello, World!")
-   ```
-
-6. **Configure URLs:**
-   Open `HelloWorldProject/urls.py` and configure the URLs to include your new app:
-   ```python
-   from django.contrib import admin
-   from django.urls import path
-   from HelloWorldApp.views import hello_world
-
-   urlpatterns = [
-       path('admin/', admin.site.urls),
-       path('hello/', hello_world, name='hello_world'),
-   ]
-   ```
-
-7. **Run the Development Server:**
-   Start the Django development server:
+6. **Add the GitHub repository as a remote:**
    ```bash
-   python manage.py runserver
+   git remote add origin https://github.com/your-username/git-demo.git
+   ```
+   Replace `your-username` with your actual GitHub username.
+
+7. **Push changes to GitHub:**
+   ```bash
+   git push -u origin master
    ```
 
-   Visit `http://127.0.0.1:8000/hello/` in your browser, and you should see "Hello, World!"
+8. **Create a new branch:**
+   ```bash
+   git checkout -b feature-branch
+   ```
 
-8. **Explaining the Structure:**
-   - `HelloWorldProject/`: The main project folder.
-   - `HelloWorldApp/`: The app folder.
-   - `views.py`: Contains the logic for handling HTTP requests and returning responses.
-   - `urls.py`: Defines URL patterns for the 
+9. **Make changes in the new branch:**
+   ```bash
+   echo "Feature in progress" > feature.txt
+   ```
+
+10. **Commit changes in the new branch:**
+   ```bash
+   git add feature.txt
+   git commit -m "Add feature"
+   ```
+
+11. **Push the new branch to GitHub:**
+    ```bash
+    git push origin feature-branch
+    ```
+
+12. **Create a Pull Request on GitHub:**
+    - Go to your repository on GitHub.
+    - Switch to the `feature-branch`.
+    - Click on "New Pull Request" to create a pull request.
+
+This is a basic demonstration, and you can explore more Git commands based on your needs. Remember to customize the URLs 
